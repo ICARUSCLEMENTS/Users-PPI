@@ -1,21 +1,19 @@
-import "./Users.css"
+import React from "react";
+import "./Users.css";
 
-function User(props) {
-    return (
-        <div className="card">
-            <img className="foto" src={props.imagem} alt={props.nome} />
-            <h3 className="nome">{props.name}</h3>
-            <h2 className="subnome">{props.age}</h2>
-            <h2 className="subnome">{props.gender}</h2>
-            <div className="char">
-                <p><span className="character">Email:</span> {props.email}</p>
-                <p><span className="character">Number:</span> {props.email}</p>
-                <p><span className="character">City:</span> {props.email}</p>
-                <p><span className="character">Email:</span> {props.email}</p>
-                <p><span className="character">Email:</span> {props.email}</p>
-
-            </div>
-        </div>
-    )
-
+function User({ image, nome, idade, genero, email, telefone, empresa, cargo, cidade }) {
+  return (
+    <div className="user-card">
+      <img src={image} alt={nome} className="user-image" />
+      <h2>{nome}</h2>
+      <p>{idade} anos | {genero}</p>
+      <p><strong>Email:</strong> {email}</p>
+      <p><strong>Telefone:</strong> {telefone}</p>
+      <p><strong>Empresa:</strong> {empresa}</p>
+      <p><strong>Cargo:</strong> {cargo}</p>
+      <p><strong>Cidade:</strong> {cidade}</p>
+    </div>
+  );
 }
+
+export default User;
